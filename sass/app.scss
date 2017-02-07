@@ -1,1 +1,39 @@
-@import "materialize";
+@import 'materialize';
+html {
+    font: {
+        size: 100%;
+    }
+}
+
+.carousel {
+    height: 100vh !important;
+    h1 {
+        padding: .4em;
+        margin: {
+            top: 1.5em;
+        }
+        font: {
+            // size: 5rem;
+        }
+        @media #{$medium-and-down} {
+            text-align: left;
+            padding: {
+                left: .5em;
+            }
+        }
+        @media #{$small-and-down} {
+            font: {
+                size: 3.8rem;
+            }
+        }
+    }
+    .carousel-fixed-item a {
+        text-transform: capitalize;
+    }
+}
+
+.indicators {
+    .indicator-item {
+        border-radius: 0 !important;
+    }
+}
