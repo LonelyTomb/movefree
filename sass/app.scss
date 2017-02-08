@@ -8,12 +8,12 @@ html {
 .carousel {
     height: 100vh !important;
     h1 {
-        padding: .4em;
+        // font-size: 3.8rem;
+        padding: .6em;
+        width: calc(100% - 3em);
         margin: {
-            top: 1.5em;
-        }
-        font: {
-            // size: 5rem;
+            left: auto;
+            right: auto;
         }
         @media #{$medium-and-down} {
             text-align: left;
@@ -35,5 +35,131 @@ html {
 .indicators {
     .indicator-item {
         border-radius: 0 !important;
+    }
+}
+
+.form-overview {
+    margin: {
+        top: 5%;
+    }
+    &>div {
+        float: none !important;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    form {
+        .field-icon {
+            color: color('green', 'darken-2');
+            right: 0;
+            top: 15%;
+        }
+        .submitButton {
+            background: {
+                color: color('green', 'lighten-2') !important;
+            }
+            min-width: 300px;
+        }
+    }
+}
+
+.signIn {
+    .logged {
+        width: calc(100% - 3rem);
+        margin-left: 3rem !important;
+    }
+}
+
+.home-overview {
+    margin: {
+        bottom: 0;
+    }
+    .menu {
+        text-align: center;
+        height: 50vh;
+        outline: solid thin color('amber', 'darken-2');
+        background: {
+            color: color('materialize-red', 'base');
+        }
+        &>div {
+            margin: {
+                top: 80px
+            }
+        }
+        img {
+            margin: {
+                top: 2em;
+            }
+            padding: 5%;
+            background-color: white;
+            height: 20%;
+            outline: red solid thin;
+            opacity:.6;
+        }
+        a {
+            color: white;
+            width: 80%;
+        }
+    }
+}
+
+.nav-wrapper {
+    background: {
+        color: color('green', 'base');
+    }
+}
+
+.menu-nav {
+    a>i {
+        color: black;
+        display: inline-block;
+        margin-left: 1%;
+    }
+}
+
+.optionOverview {
+    margin: {
+        top: 3%;
+    }
+}
+
+.options {
+    float: none !important;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    .optionDetails {
+        position: relative;
+        left: calc(100% - 8rem);
+        i {
+            position: absolute;
+        }
+        .type {
+            bottom: 65%;
+        }
+        .status {
+            width: 6em;
+            top: 65%;
+        }
+    }
+}
+
+.reservationForm {
+    &>div {
+        float: none !important;
+        margin: {
+            right: auto;
+        }
+        .field-icon {
+            right: -23px;
+        }
+        .amount {
+            width: calc(100% - 3rem);
+            margin: {
+                left: 3rem;
+            }
+        }
     }
 }
