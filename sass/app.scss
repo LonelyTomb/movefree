@@ -5,16 +5,20 @@ html {
     }
 }
 
+//**********************/
+//**** Home Page ******/
+//*********************/
 .carousel {
     height: 100vh !important;
+    .carousel-item>div {
+        height: calc(100% - 4rem);
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     h1 {
-        // font-size: 3.8rem;
+        width: 100%;
         padding: .6em;
-        width: calc(100% - 3em);
-        margin: {
-            left: auto;
-            right: auto;
-        }
         @media #{$medium-and-down} {
             text-align: left;
             padding: {
@@ -29,15 +33,59 @@ html {
     }
     .carousel-fixed-item a {
         text-transform: capitalize;
+        min-width: 20%;
+        font-size: 3rem;
+        height: auto;
+        padding: 0.3em;
+    }
+    .indicators {
+        .indicator-item {
+            &.active {
+                background: {
+                    color: #fff;
+                }
+            }
+            border-radius: 0;
+            background: {
+                color: rgba(0, 0, 0, .5);
+            }
+            height: 15px;
+            width: 15px;
+        }
     }
 }
 
-.indicators {
-    .indicator-item {
-        border-radius: 0 !important;
+//*****************************/
+//**** Preview Overview ******/
+//*****************************/
+.preview-overview {
+    // min-height: 80vh;
+    h1 {
+        // color: color('green', 'base');
+        font: {
+            size: calc(6rem / 2);
+        }
+    }
+    .card {
+        height: calc(100vh - 10rem);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5rem;
+    }
+    .buttonGroup {
+        a {
+            padding: 3%;
+            height: auto;
+            font-size: 2.4em;
+            margin-bottom: 1em;
+        }
     }
 }
 
+//*****************************/
+//**** Sign In & Up Form ******/
+//*****************************/
 .form-overview {
     margin: {
         top: 5%;
@@ -71,6 +119,13 @@ html {
     }
 }
 
+%bs {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .14), 0 1px 7px 0 rgba(0, 0, 0, .12), 0 3px 1px -1px rgba(0, 0, 0, .2);
+}
+
+//**********************/
+//**** Main Menu ******/
+//*********************/
 .home-overview {
     margin: {
         bottom: 0;
@@ -78,9 +133,10 @@ html {
     .menu {
         text-align: center;
         height: 50vh;
-        outline: solid thin color('amber', 'darken-2');
+        // outline: solid thin color('amber', 'darken-2');
+        @extend %bs;
         background: {
-            color: color('materialize-red', 'base');
+            color: color('green', 'base');
         }
         &>div {
             margin: {
@@ -94,8 +150,7 @@ html {
             padding: 5%;
             background-color: white;
             height: 20%;
-            outline: red solid thin;
-            opacity:.6;
+            @extend %bs;
         }
         a {
             color: white;
@@ -104,17 +159,26 @@ html {
     }
 }
 
-.nav-wrapper {
-    background: {
-        color: color('green', 'base');
-    }
+//**********************/
+//**** Reservation ******/
+//*********************/
+%green {
+    color: color('green', 'base');
 }
 
 .menu-nav {
     a>i {
-        color: black;
+        @extend %green;
         display: inline-block;
         margin-left: 1%;
+    }
+    .nav-wrapper {
+        background: {
+            color: color('shades', 'white');
+        }
+    }
+    .brand-logo {
+        @extend %green;
     }
 }
 
@@ -124,11 +188,29 @@ html {
     }
 }
 
+.ResOverview {
+    background: {
+        // color: color('green', 'base');
+    }
+}
+
+//**********************/
+//**** Pick Up ******/
+//*********************/
 .options {
     float: none !important;
     margin: {
         left: auto;
         right: auto;
+    }
+    .card-panel {
+        background: {
+            color: color('shades', 'white');
+        }
+        @extend %green;
+        a {
+            @extend %green;
+        }
     }
     .optionDetails {
         position: relative;
@@ -146,6 +228,9 @@ html {
     }
 }
 
+//****************************/
+//**** Reservation Form ******/
+//****************************/
 .reservationForm {
     &>div {
         float: none !important;

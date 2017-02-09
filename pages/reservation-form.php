@@ -1,5 +1,7 @@
 <div class="reservationForm row form-overview">
     <div class="col s10 l6">
+        <div class="card">
+            <div class="card-content">
         <form>
             <div class="row">
                 <div class="input-field row">
@@ -36,5 +38,7 @@
                             <a href="" class="btn waves-effect waves-ripple red center-align submitButton">Make Reservation</a>
                         </div>
         </form>
+        </div>
+    </div>
     </div>
 </div>

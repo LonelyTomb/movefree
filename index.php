@@ -16,6 +16,8 @@
     require 'processor/processor.php';
     if (title() == false) {
             include 'pages/default.php';
+    } else if (in_array('preview', title())) {
+        include 'pages/sign-preload.php';
     } else if (in_array('signIn', title())) {
             include 'pages/signIn.php';
     } else if (in_array('signUp', title())) {

@@ -3,7 +3,7 @@
         <div class="col s6 m6 menu">
             <div>
                 <img src="images/ic_mode_edit_48px.svg" alt="" class="responsive-img">
-                <p class="flow-text"><a href="">Make Reservation</a></p>
+                <p class="flow-text"><a href="?reservation">Make Reservation</a></p>
             </div>
         </div>
         <div class="col s6 m6 menu">
