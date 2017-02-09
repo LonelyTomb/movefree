@@ -1,6 +1,6 @@
  <div class="carousel carousel-slider center" data-indicators="true">
         <div class="carousel-fixed-item center">
-            <a class="btn waves-effect white grey-text darken-text-2">Continue</a>
+            <a href="?preview" class="btn waves-effect white grey-text darken-text-2">Continue</a>
         </div>
         <div class="carousel-item green white-text" href="#one!">
             <div class="valign-wrapper">

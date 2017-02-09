@@ -3,6 +3,9 @@ html {
     font: {
         size: 100%;
     }
+    background: {
+        color: color('green', 'base');
+    }
 }
 
 //**********************/
@@ -87,6 +90,7 @@ html {
 //**** Sign In & Up Form ******/
 //*****************************/
 .form-overview {
+    min-height: 100vh;
     margin: {
         top: 5%;
     }
@@ -107,7 +111,8 @@ html {
             background: {
                 color: color('green', 'lighten-2') !important;
             }
-            min-width: 300px;
+            min-width: 60%;
+            max-width:80%;
         }
     }
 }
@@ -116,6 +121,9 @@ html {
     .logged {
         width: calc(100% - 3rem);
         margin-left: 3rem !important;
+    }
+    .card {
+        margin-top: 20%;
     }
 }
 
