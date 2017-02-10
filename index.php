@@ -8,12 +8,16 @@
     <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
     <link href="fonts/iconfont/material-icons.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
 </head>
 
 
 <body>
     <?php
     require 'processor/processor.php';
+    if (title() != false) {
+            include 'pages/navbar.php';
+    }
     if (title() == false) {
             include 'pages/default.php';
     } else if (in_array('preview', title())) {
@@ -29,6 +33,7 @@
     }
    ?>
         <script src=" js/jquery.min.js "></script>
+        <script src=" js/jquery.star.rating.min.js "></script>
         <script src="js/materialize.min.js "></script>
         <script src="js/script.js "></script>
 </body>

@@ -1,0 +1,356 @@
+html {
+    font: {
+        size: 100%;
+        family: 'Amatic SC', cursive;
+    }
+    background: {
+        color: color('green', 'base');
+    }
+}
+
+p,
+a,
+span {
+    font: {
+        family: 'Amatic SC', cursive;
+        weight: 500;
+    }
+}
+
+%no-float {
+    float: none !important;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+%but {
+    background: {
+        color: transparent;
+    }
+    border:solid 4px rgba(255, 255, 255, .94);
+    box-shadow:none;
+    font: {
+        weight: 600;
+    }
+}
+
+//**********************/
+//**** Home Page ******/
+//*********************/
+.carousel {
+    height: 100vh !important;
+    %bgg {
+        background: {
+            position: center;
+            size: cover;
+            repeat: no-repeat;
+            blend-mode: overlay;
+        }
+    }
+    .one {
+        @extend %bgg;
+        background-image: url('../images/3.jpg');
+    }
+    .two {
+        @extend %bgg;
+        background-image: url('../images/2.jpg');
+        span {
+            display: block;
+        }
+    }
+    .carousel-item>div {
+        height: calc(100% - 4rem);
+        width: 95%;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    h1 {
+        width: 100%;
+        padding: .6em;
+        @media #{$medium-and-down} {
+            text-align: left;
+            padding: {
+                left: .5em;
+            }
+        }
+        @media #{$small-and-down} {
+            font: {
+                size: 3.8rem;
+            }
+        }
+    }
+    .carousel-fixed-item a {
+        text-transform: capitalize;
+        min-width: 20%;
+        font: {
+            size: 3rem;
+        }
+        height: auto;
+        padding: 0.3em;
+        @extend %but;
+    }
+    .indicators {
+        .indicator-item {
+            &.active {
+                background: {
+                    color: #fff;
+                }
+            }
+            border-radius: 0;
+            background: {
+                color: rgba(0, 0, 0, .5);
+            }
+            height: 15px;
+            width: 15px;
+        }
+    }
+}
+
+//*****************************/
+//**** Preview Overview ******/
+//*****************************/
+.preview-overview {
+    // min-height: 80vh;
+    h1 {
+        // color: color('green', 'base');
+        font: {
+            size: 3.5rem;
+            size: 12vw;
+        }
+    }
+    .card {
+        height: calc(100vh - 10rem);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5rem;
+    }
+    .buttonGroup {
+        a {
+            padding: 3%;
+            height: auto;
+            font-size: 2.4em;
+            margin-bottom: 1em;
+            @extend %but;
+            background: {
+                color: color('green', 'lighten-4');
+            }
+        }
+        @each $button in left,
+        right {
+            .#{$button}space {
+                margin-#{$button}: 3%;
+            }
+        }
+    }
+}
+
+//*****************************/
+//**** Sign In & Up Form ******/
+//*****************************/
+.form-overview {
+    min-height: 100vh;
+    margin: {
+        top: 5%;
+    }
+    &>div {
+        float: none !important;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    form {
+        .field-icon {
+            color: color('green', 'darken-2');
+            right: 0;
+            top: 15%;
+        }
+        .submitButton {
+            background: {
+                color: color('green', 'lighten-2') !important;
+            }
+            min-width: 60%;
+            max-width:80%;
+        }
+    }
+}
+
+.signIn {
+    .logged {
+        width: calc(100% - 3rem);
+        margin-left: 3rem !important;
+    }
+    .card {
+        margin-top: 20%;
+    }
+}
+
+%bs {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .14), 0 1px 7px 0 rgba(0, 0, 0, .12), 0 3px 1px -1px rgba(0, 0, 0, .2);
+}
+
+//**********************/
+//**** Main Menu ******/
+//*********************/
+.home-overview {
+    margin: {
+        bottom: 0;
+    }
+    .menu {
+        text-align: center;
+        height: 50vh;
+        // outline: solid thin color('amber', 'darken-2');
+        @extend %bs;
+        background: {
+            color: color('green', 'base');
+        }
+        &>div {
+            margin: {
+                top: 80px
+            }
+        }
+        img {
+            margin: {
+                top: 2em;
+            }
+            padding: 5%;
+            background-color: white;
+            height: 20%;
+            cursor:pointer;
+            @extend %bs;
+        }
+        a {
+            color: white;
+            width: 80%;
+        }
+    }
+}
+
+//**********************/
+//**** Reservation ******/
+//*********************/
+%green {
+    color: color('green', 'base');
+}
+
+.menu-nav {
+    a>i {
+        @extend %green;
+        display: inline-block;
+        margin-left: 1%;
+    }
+    .nav-wrapper {
+        background: {
+            color: color('shades', 'white');
+        }
+    }
+    .brand-logo {
+        @extend %green;
+    }
+}
+
+.optionOverview {
+    margin: {
+        top: 3%;
+    }
+}
+
+// .ResOverview {
+//     background: {
+//          color: color('green', 'base');
+//     } }
+//**********************/
+//**** Pick Up ******/
+//********************/
+.options {
+    @extend %no-float;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    .card-panel {
+        background: {
+            color: color('shades', 'white');
+        }
+        @extend %green;
+        a {
+            @extend %green;
+        }
+    }
+    .optionDetails {
+        position: relative;
+        left: calc(100% - 8rem);
+        i {
+            position: absolute;
+        }
+        .type {
+            bottom: 65%;
+        }
+        .status {
+            width: 6em;
+            top: 65%;
+        }
+    }
+}
+
+//****************************/
+//**** Reservation Form ******/
+//****************************/
+.reservationForm {
+    &>div {
+        @extend %no-float;
+        .field-icon {
+            right: -23px;
+        }
+        .amount {
+            width: calc(100% - 3rem);
+            margin: {
+                left: 3rem;
+            }
+        }
+    }
+}
+
+//****************************/
+//**** Select Driver ******/
+//****************************/
+.selectDriver {
+    .bars {
+        &>div {
+            @extend %no-float;
+        }
+        img {
+            max-height: 200px;
+        }
+    }
+    .profile {
+        p {
+            margin: {
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+    .price {
+        .card-panel {
+            padding: {
+                top: 2px;
+                bottom: 2px;
+            }
+            p {
+                margin: {
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+            .review {
+                cursor: hand;
+            }
+        }
+    }
+}

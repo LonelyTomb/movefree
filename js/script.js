@@ -17,4 +17,7 @@
         }
         e.preventDefault();
     });
+    $('.reserved').modal();
+    $('.reserved').modal('open');
+    $('p.review').addRating({ 'icon': 'star' });
 })();
