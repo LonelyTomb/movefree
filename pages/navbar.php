@@ -5,7 +5,7 @@
         $back = "<a href='$back_link' class='back'><i class='material-icons'>keyboard_backspace</i></a>";
         if (in_array('preview', title()) || in_array('home', title())) {
             $back = "";
-            $header = '<img class="img-responsive" src="images/logo1">';
+            $header = '<img class="logo prefix" src="images/logo.png">';
             if (in_array('home', title())) {
                 include'sidebar.php';
             }
@@ -17,6 +17,10 @@
             $header =  'Luxury Hire';
         } else if (in_array('personal', title())) {
             $header =  'Personal';
+        } else if (in_array('pay', title())) {
+            $header =  'Payment Details';
+        } else if (in_array('select', title())) {
+            $header =  'Driver Details';
         } else if (in_array('reservation', title())) {
             $back = "";
             $header = 'Reservation';

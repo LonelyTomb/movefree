@@ -1,4 +1,4 @@
-<div class="preview-overview">
+<main class="preview-overview">
     <div class="row">
         <div class="col m6 l6">
     <div class="card">
@@ -12,4 +12,4 @@
         </div>
         </div>
     </div>
-</div>
+</main>

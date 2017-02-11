@@ -2,7 +2,7 @@
     <div class="row ">
         <div class="col s10 options">
             <div class="card-panel">
-                <span><a href="?reservation&pickUp">Pick Up</a></span>
+                <span><a href="?reservation&pickup">Pick Up</a></span>
                 <span class="optionDetails "><i class="type">Standard</i><i>&#8358;1000</i><i class="status truncate">20 cabs Available</i></span>
             </div>
         </div>
@@ -32,3 +32,4 @@
         </div>
     </div>
 </div>
+</main>

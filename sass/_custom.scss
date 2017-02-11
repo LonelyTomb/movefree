@@ -1,22 +1,3 @@
-html {
-    font: {
-        size: 100%;
-        family: 'Amatic SC', cursive;
-    }
-    background: {
-        color: color('green', 'base');
-    }
-}
-
-p,
-a,
-span {
-    font: {
-        family: 'Amatic SC', cursive;
-        weight: 500;
-    }
-}
-
 %no-float {
     float: none !important;
     margin: {
@@ -29,10 +10,95 @@ span {
     background: {
         color: transparent;
     }
-    border:solid 4px rgba(255, 255, 255, .94);
+    border:solid 3px rgba(255, 255, 255, .94);
     box-shadow:none;
     font: {
         weight: 600;
+    }
+}
+
+%bs {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .14), 0 1px 7px 0 rgba(0, 0, 0, .12), 0 3px 1px -1px rgba(0, 0, 0, .2);
+}
+
+html {
+    font: {
+        size: 100%;
+        family: 'Amatic SC', cursive;
+    }
+    background: {
+        color: color('green', 'base');
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+p,
+a,
+span {
+    font: {
+        family: 'Amatic SC', cursive;
+        weight: 500;
+    }
+}
+
+header {
+    z-index: 100;
+    background: {
+        color: #00BFAB;
+    }
+}
+
+//**********************/
+//*********  Navbar*****/
+//**********************/
+.menu-nav {
+    line-height: inherit;
+    a>i {
+        color: color('shades', 'white');
+        display: inline-block;
+        margin-left: 1%;
+    }
+    .nav-wrapper {
+        background: {
+            color: #00BFAB;
+        }
+    }
+    .brand-logo {
+        color: color('shades', 'white');
+        height: 100%;
+        .logo {
+            height: 80%;
+            vertical-align: middle;
+        }
+    }
+}
+
+//**********************/
+//**** Footer ******/
+//*********************/
+footer.page-footer {
+    background: {
+        color: #00C7AB;
+    }
+    padding: {
+        top: 0;
+    }
+    .footer-copyright {
+        line-height: inherit;
+        p {
+            color: color('shades', 'black');
+            vertical-align: middle;
+            padding-right: 5%;
+        }
     }
 }
 
@@ -114,12 +180,11 @@ span {
 //**** Preview Overview ******/
 //*****************************/
 .preview-overview {
-    // min-height: 80vh;
     h1 {
         // color: color('green', 'base');
         font: {
             size: 3.5rem;
-            size: 12vw;
+            size: 6vw;
         }
     }
     .card {
@@ -190,43 +255,45 @@ span {
     }
 }
 
-%bs {
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .14), 0 1px 7px 0 rgba(0, 0, 0, .12), 0 3px 1px -1px rgba(0, 0, 0, .2);
-}
-
 //**********************/
 //**** Main Menu ******/
 //*********************/
 .home-overview {
-    margin: {
-        bottom: 0;
+    &>div {
+        margin: {
+            bottom: 0;
+        }
     }
     .menu {
         text-align: center;
-        height: 50vh;
-        // outline: solid thin color('amber', 'darken-2');
-        @extend %bs;
+        height: 41.3vh;
         background: {
             color: color('green', 'base');
         }
-        &>div {
-            margin: {
-                top: 80px
-            }
-        }
-        img {
-            margin: {
-                top: 2em;
-            }
-            padding: 5%;
-            background-color: white;
-            height: 20%;
-            cursor:pointer;
-            @extend %bs;
-        }
         a {
-            color: white;
-            width: 80%;
+            @extend %but;
+            position: relative;
+            top: 45%;
+            bottom: 45%;
+            padding: {
+                top: 3%;
+                bottom: 3%;
+                left: 7%;
+                right: 7%;
+            }
+            height: auto;
+            font: {
+                size: 3em;
+            }
+        }
+    }
+    @each $num,
+    $colr in(1:#02B298,
+    2:#02A384,
+    3:#05D3B5,
+    4:#02B298) {
+        .menu#{$num} {
+            background-color: $colr;
         }
     }
 }
@@ -238,32 +305,18 @@ span {
     color: color('green', 'base');
 }
 
-.menu-nav {
-    a>i {
-        @extend %green;
-        display: inline-block;
-        margin-left: 1%;
-    }
-    .nav-wrapper {
-        background: {
-            color: color('shades', 'white');
-        }
-    }
-    .brand-logo {
-        @extend %green;
-    }
-}
-
 .optionOverview {
     margin: {
         top: 3%;
     }
 }
 
-// .ResOverview {
-//     background: {
-//          color: color('green', 'base');
-//     } }
+.ResOverview {
+    background: {
+        color: #02B298;
+    }
+}
+
 //**********************/
 //**** Pick Up ******/
 //********************/
@@ -352,5 +405,32 @@ span {
                 cursor: hand;
             }
         }
+    }
+}
+
+//****************************/
+//**** Payment ******/
+//****************************/
+.payment-overview {
+    &>div {
+        @extend %no-float;
+    }
+    .input-field {
+        margin: {
+            top: 0;
+            bottom: 0;
+        }
+        input {
+            margin: {
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+.paySuccess {
+    &>div {
+        @extend %no-float;
     }
 }

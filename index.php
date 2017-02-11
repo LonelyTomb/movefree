@@ -15,21 +15,26 @@
 <body>
     <?php
     require 'processor/processor.php';
-    if (title() != false) {
-            include 'pages/navbar.php';
-    }
+
+    //Loads Landing Page
     if (title() == false) {
             include 'pages/default.php';
-    } else if (in_array('preview', title())) {
-        include 'pages/sign-preload.php';
-    } else if (in_array('signIn', title())) {
+    }
+
+    if (title() != false) {
+        include 'pages/header.php';
+        if (in_array('preview', title())) {
+                include 'pages/sign-preload.php';
+        } else if (in_array('signIn', title())) {
             include 'pages/signIn.php';
-    } else if (in_array('signUp', title())) {
-            include 'pages/signUp.php';
-    } else if (in_array('home', title())) {
-            include 'pages/home.php';
-    } else if (in_array('reservation', title())) {
-            include  'pages/reservation.php';
+        } else if (in_array('signUp', title())) {
+                include 'pages/signUp.php';
+        } else if (in_array('home', title())) {
+                include 'pages/home.php';
+        } else if (in_array('reservation', title())) {
+                include  'pages/reservation.php';
+        }
+        include 'pages/footer.php';
     }
    ?>
         <script src=" js/jquery.min.js "></script>
