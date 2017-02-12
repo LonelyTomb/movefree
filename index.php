@@ -31,8 +31,17 @@
                 include 'pages/signUp.php';
         } else if (in_array('home', title())) {
                 include 'pages/home.php';
-        } else if (in_array('reservation', title())) {
-                include  'pages/reservation.php';
+        }
+        //Passenger pages
+        if (in_array('reservation', title())) {
+                include  'pages/passenger/reservation.php';
+        }
+
+        //Driver pages
+        if (in_array('pass', title())) {
+                include 'pages/driver/passenger.php';
+        } else if (in_array('driver', title())) {
+                include 'pages/driver/driver.php';
         }
         include 'pages/footer.php';
     }

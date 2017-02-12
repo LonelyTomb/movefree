@@ -21,6 +21,10 @@
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .14), 0 1px 7px 0 rgba(0, 0, 0, .12), 0 3px 1px -1px rgba(0, 0, 0, .2);
 }
 
+#sidenav-overlay {
+    z-index: 1;
+}
+
 html {
     font: {
         size: 100%;
@@ -432,5 +436,70 @@ footer.page-footer {
 .paySuccess {
     &>div {
         @extend %no-float;
+    }
+}
+
+//****************************/
+//************** Driver ******/
+//****************************/
+.driverOverview {
+    .request {
+        &>div {
+            @extend %no-float;
+        }
+        .card-panel {
+            padding: 10px;
+            &>div {
+                margin: {
+                    bottom: 0;
+                }
+            }
+        }
+        img {
+            max-height: 50px;
+        }
+        p {
+            margin: {
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+//****************************/
+//*********** Passenger ******/
+//****************************/
+.passOverview {
+    .image {
+        &>div {
+            padding: {
+                bottom: 0.5%;
+            }
+        }
+        margin: {
+            top: 4%;
+        }
+        img {
+            max-height: 200px;
+        }
+    }
+    .details,
+    .pTime {
+        p {
+            margin: {
+                top: 0;
+                bottom: 0;
+            }
+        }
+        .traffic,
+        .time {
+            &>div {
+                @extend %no-float;
+            }
+            .card-panel {
+                padding: 10px;
+            }
+        }
     }
 }

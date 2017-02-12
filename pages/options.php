@@ -2,6 +2,10 @@
         <ul id="dropOptions" class="dropdown-content">
             <li class="divider"></li>
             <li><a href="index.php">home</a></li>
-            <li><a href="?home">menu</a></li>
+            <?php
+            if (!in_array('driver', title())) {
+                        echo '<li><a href="?home">menu</a></li>';
+            }
+                    ?>
             <li><a href="#">about</a></li>
         </ul>
