@@ -20,4 +20,17 @@
     // $('.reserved').modal();
     // $('.reserved').modal('open');
     $('p.review').addRating({ 'icon': 'star' });
+    $('.buttonGroup a').click(function() {
+        if ($(this).hasClass('signinbtn')) {
+            if (!$('.signup').hasClass('hide')) {
+                $('.signup').addClass('hide');
+            }
+            $('.signin').toggleClass('hide');
+        } else if ($(this).hasClass('signupbtn')) {
+            if (!$('.signin').hasClass('hide')) {
+                $('.signin').addClass('hide');
+            }
+            $('.signup').toggleClass('hide');
+        }
+    });
 })();

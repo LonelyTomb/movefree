@@ -21,6 +21,14 @@
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .14), 0 1px 7px 0 rgba(0, 0, 0, .12), 0 3px 1px -1px rgba(0, 0, 0, .2);
 }
 
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
 #sidenav-overlay {
     z-index: 1;
 }
@@ -49,7 +57,7 @@ p,
 a,
 span {
     font: {
-        family: 'Amatic SC', cursive;
+        family: 'Amatic SC Bold', cursive;
         weight: 500;
     }
 }
@@ -191,12 +199,34 @@ footer.page-footer {
             size: 6vw;
         }
     }
+    .card-container {
+        @extend %no-float;
+    }
     .card {
-        height: calc(100vh - 10rem);
-        width: 80%;
+        min-height: calc(100vh - 4rem);
+        // width: 80%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 5rem;
+        margin-top: 2%;
+        @media #{$small-and-down} {
+            float: none !important;
+            margin: {
+                left: auto;
+                right: auto;
+            }
+        }
+    }
+    .formOutline {
+        background-image: url(../images/3.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .card-panel {
+            background: {
+                color: rgba(0, 0, 0, .5);
+                blend-mode: overlay;
+            }
+        }
     }
     .buttonGroup {
         a {
@@ -209,35 +239,44 @@ footer.page-footer {
                 color: color('green', 'lighten-4');
             }
         }
-        @each $button in left,
-        right {
-            .#{$button}space {
-                margin-#{$button}: 3%;
-            }
-        }
+        // @each $button in left,
+        // right {
+        //     .#{$button}space {
+        //         margin-#{$button}: 3%;
+        //     }
+        // }
     }
 }
 
 //*****************************/
 //**** Sign In & Up Form ******/
 //*****************************/
-.form-overview {
-    min-height: 100vh;
-    margin: {
-        top: 5%;
-    }
-    &>div {
-        float: none !important;
-        margin: {
-            left: auto;
-            right: auto;
-        }
-    }
+.preview-overview {
     form {
+        &>div {
+            margin: {
+                bottom: 0;
+            }
+        }
         .field-icon {
             color: color('green', 'darken-2');
             right: 0;
             top: 15%;
+        }
+        .input-field {
+            margin: {
+                top: 3%;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        input {
+            color: color('shades', 'white');
+            margin: {
+                top: 0;
+                bottom: 0;
+                left: 0;
+            }
         }
         .submitButton {
             background: {
@@ -245,17 +284,22 @@ footer.page-footer {
             }
             min-width: 60%;
             max-width:80%;
+            margin: {
+                top: 20px;
+            }
         }
     }
-}
-
-.signIn {
-    .logged {
-        width: calc(100% - 3rem);
-        margin-left: 3rem !important;
-    }
-    .card {
-        margin-top: 20%;
+    .signin {
+        .logged {
+            width: calc(100% - 3rem);
+            margin-left: 3rem !important;
+            label {
+                color: color('shades', 'white');
+            }
+        }
+        .card {
+            margin-top: 20%;
+        }
     }
 }
 

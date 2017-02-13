@@ -1,8 +1,12 @@
 <nav class="menu-nav">
     <div class="nav-wrapper">
         <?php
-        $back_link = $_SERVER['HTTP_REFERER'];
-        $back = "<a href='$back_link' class='back'><i class='material-icons'>keyboard_backspace</i></a>";
+            $back_link = isset($_SERVER['HTTP_REFERER']) ?$_SERVER['HTTP_REFERER']:"";
+        if ($back_link != "") {
+            $back = "<a href='$back_link' class='back'><i class='material-icons'>keyboard_backspace</i></a>";
+        } else {
+            $back = "";
+        }
 
         if (in_array('preview', title()) || in_array('home', title())) {
             $back = "";
@@ -33,14 +37,14 @@
 
         //Driver Pages
         if (in_array('pass', title())) {
-            $header= 'Passenger Details';
+            $header= 'Passenger Details';            ;
         } else if (in_array('driver', title())) {
             $back ="";
             $header = 'Pickup Request';
             include 'sidebar.php';
         }
 
-        if ($back !="") {
+        if ($back != "") {
             echo $back;
         }
 ?>

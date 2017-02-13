@@ -22,8 +22,10 @@
           <a href="" class="time">
             <div class="col m10 l6">
                 <div class="card-panel">
+                    <p>
                   <span class="initial">10:00am</span>-
                   <span class="final">10:30am</span>
+                  </p>
                 </div>
             </div>
         </a>
