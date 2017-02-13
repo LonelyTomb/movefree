@@ -1,3 +1,4 @@
+<?php require 'processor/start_session.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,23 +26,23 @@
         include 'pages/header.php';
         if (in_array('preview', title())) {
                 include 'pages/sign-preload.php';
-        } else if (in_array('signIn', title())) {
-            include 'pages/signIn.php';
-        } else if (in_array('signUp', title())) {
-                include 'pages/signUp.php';
-        } else if (in_array('home', title())) {
-                include 'pages/home.php';
         }
-        //Passenger pages
-        if (in_array('reservation', title())) {
-                include  'pages/passenger/reservation.php';
+        if (isset($_SESSION['user']['logged'])) {
+                //Passenger pages
+            if (in_array('home', title())) {
+                    include 'pages/home.php';
+            } else if (in_array('reservation', title())) {
+                    include  'pages/passenger/reservation.php';
+            }
         }
 
-        //Driver pages
-        if (in_array('pass', title())) {
-                include 'pages/driver/passenger.php';
-        } else if (in_array('driver', title())) {
-                include 'pages/driver/driver.php';
+        if (isset($_SESSION['user']['logged'])) {
+                //Driver pages
+            if (in_array('pass', title())) {
+                    include 'pages/driver/passenger.php';
+            } else if (in_array('driver', title())) {
+                    include 'pages/driver/driver.php';
+            }
         }
         include 'pages/footer.php';
     }

@@ -13,7 +13,7 @@
     border:solid 3px rgba(255, 255, 255, .94);
     box-shadow:none;
     font: {
-        weight: 600;
+        weight: 400;
     }
 }
 
@@ -59,6 +59,12 @@ span {
     font: {
         family: 'Amatic SC Bold', cursive;
         weight: 500;
+    }
+}
+
+input {
+    font: {
+        family: 'Roboto-Thin';
     }
 }
 
@@ -221,6 +227,10 @@ footer.page-footer {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        .card-content {
+            padding: 0;
+            padding-top: 5px;
+        }
         .card-panel {
             background: {
                 color: rgba(0, 0, 0, .5);
@@ -259,7 +269,7 @@ footer.page-footer {
             }
         }
         .field-icon {
-            color: color('green', 'darken-2');
+            color: color('shades', 'white');
             right: 0;
             top: 15%;
         }
@@ -275,8 +285,12 @@ footer.page-footer {
             margin: {
                 top: 0;
                 bottom: 0;
-                left: 0;
+                left: 0 !important;
             }
+            border-bottom: 4px solid #fff;
+        }
+        label[for="email"]:after {
+            top: 35px;
         }
         .submitButton {
             background: {
@@ -331,7 +345,8 @@ footer.page-footer {
             }
             height: auto;
             font: {
-                size: 3em;
+                size: 2em;
+                weight: 400;
             }
         }
     }
