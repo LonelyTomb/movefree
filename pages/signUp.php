@@ -2,26 +2,26 @@
     <form>
         <div class="row">
             <div class="input-field row">
-                <i class="small field-icon material-icons prefix">account_circle</i>
+                <i class="small field-icon material-icons prefix hide-on-small-only">account_circle</i>
                 <input type="text" name="fullname" class="validate fullname" placeholder="Fullname" id="fullname">
             </div>
         </div>
         <div class="row">
             <div class="input-field row">
-                <i class="small field-icon material-icons prefix">email</i>
+                <i class="small field-icon material-icons prefix hide-on-small-only">email</i>
                 <input type="email" placeholder="Email" name="email" class="validate email">
                 <label for="email" data-error="wrong" data-success="right"></label>
             </div>
         </div>
         <div class="row">
             <div class="input-field row">
-                <i class="small field-icon material-icons prefix">phone</i>
+                <i class="small field-icon material-icons prefix hide-on-small-only">phone</i>
                 <input type="text" placeholder="Phone" name="phone" class="validate phone">
             </div>
         </div>
         <div class="row">
             <div class="input-field row">
-                <i class="small field-icon material-icons prefix">place</i>
+                <i class="small field-icon material-icons prefix hide-on-small-only">place</i>
                 <input type="text" placeholder="Address" name="address" class="validate address">
             </div>
         </div>

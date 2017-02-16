@@ -26,6 +26,7 @@ if (isset($_POST['logIn'])) {
                 $stmt->bindColumn('email',$email);
                 $stmt->bindColumn('password',$pwd);
                 $stmt->bindColumn('type',$type);
+                $stmt->bindColumn('id',$id);
 
                 $result = $stmt->fetch(PDO::FETCH_BOUND);
                 if (password_verify($password, $pwd)) {
@@ -33,6 +34,7 @@ if (isset($_POST['logIn'])) {
                     $_SESSION['user']['username'] = $name;
                     $_SESSION['user']['email'] = $email;
                     $_SESSION['user']['type'] = $type;
+                    $_SESSION['user']['id'] = $id;
                     echo json_encode(array('txt'=>'Log In Process Successful!', 'color'=>$color['valid'],'type'=>$type));
                     exit;
                 } else {

@@ -6,6 +6,11 @@
     }
 }
 
+#map {
+    height: 400px;
+    width:100%;
+}
+
 %but {
     background: {
         color: transparent;
@@ -23,10 +28,6 @@
 
 .show {
     display: block;
-}
-
-.hide {
-    display: none;
 }
 
 #sidenav-overlay {
@@ -55,10 +56,11 @@ main {
 
 p,
 a,
-span {
+span,
+h1 {
     font: {
         family: 'Amatic SC Bold', cursive;
-        weight: 500;
+        weight: 400;
     }
 }
 
@@ -209,7 +211,7 @@ footer.page-footer {
         @extend %no-float;
     }
     .card {
-        min-height: calc(100vh - 4rem);
+        min-height: 100vh;
         // width: 80%;
         margin-left: auto;
         margin-right: auto;
@@ -240,21 +242,19 @@ footer.page-footer {
     }
     .buttonGroup {
         a {
+            @extend %but;
             padding: 3%;
             height: auto;
             font-size: 2.4em;
             margin-bottom: 1em;
-            @extend %but;
             background: {
-                color: color('green', 'lighten-4');
+                color: color('shades', 'white');
             }
+            border:solid 3px color('green',
+            'base');
+            color:color('green',
+            'base');
         }
-        // @each $button in left,
-        // right {
-        //     .#{$button}space {
-        //         margin-#{$button}: 3%;
-        //     }
-        // }
     }
 }
 
@@ -288,6 +288,9 @@ footer.page-footer {
                 left: 0 !important;
             }
             border-bottom: 4px solid #fff;
+            @media #{$small-and-down} {
+                width: 100% !important;
+            }
         }
         label[for="email"]:after {
             top: 35px;
@@ -305,8 +308,7 @@ footer.page-footer {
     }
     .signin {
         .logged {
-            width: calc(100% - 3rem);
-            margin-left: 3rem !important;
+            margin-left: 0;
             label {
                 color: color('shades', 'white');
             }
@@ -381,7 +383,7 @@ footer.page-footer {
 }
 
 //**********************/
-//**** Pick Up ******/
+//**** Reseravtion Type ******/
 //********************/
 .options {
     @extend %no-float;
@@ -423,11 +425,14 @@ footer.page-footer {
         .field-icon {
             right: -23px;
         }
-        .amount {
+        .payType {
             width: calc(100% - 3rem);
             margin: {
                 left: 3rem;
             }
+        }
+        input.time {
+            margin-left: 3rem !important;
         }
     }
 }
@@ -468,6 +473,18 @@ footer.page-footer {
                 cursor: hand;
             }
         }
+    }
+    .map {
+        .card-panel{
+            position:relative;
+        a {
+            bottom: 10%;
+            position: absolute;
+            left: 5%;
+        }
+        .mapCont {
+            min-height: 100%;
+        }}
     }
 }
 
@@ -558,6 +575,23 @@ footer.page-footer {
             }
             .card-panel {
                 padding: 10px;
+            }
+        }
+    }
+}
+
+//****************************/
+//******Traffic History ******/
+//****************************/
+.historyOverview{
+    .card-panel{
+        @extend %no-float;
+        &>div{
+            margin-bottom:0;
+        }
+        .complete{
+            a{
+                margin-bottom:4%;
             }
         }
     }

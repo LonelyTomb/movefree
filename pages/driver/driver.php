@@ -1,8 +1,11 @@
 <main class="driverOverview">
-    <a href="?driver&pass&john">
-        <div class="row request">
-            <div class="col m10 l6">
-                <div class="card-panel">
+    <?php
+    
+    ?>
+    <div class="row request">
+        <div class="col m10 l6">
+            <a href="?driver&pass&john">
+                <div class="card-panel hoverable">
                     <div class="row">
                         <div class="col s2">
                             <img src="images/avatar.png" alt="" class=" img-responsive circle">
@@ -17,13 +20,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
-    </a>
-    <a href="?driver&pass&jane">
-        <div class="row request">
-            <div class="col m10 l6">
-                <div class="card-panel">
+    </div>
+
+
+    <div class="row request">
+        <div class="col m10 l6">
+            <a href="?driver&pass&jane">
+                <div class="card-panel hoverable">
                     <div class="row">
                         <div class="col s2">
                             <img src="images/avatar.png" alt="" class=" img-responsive circle">
@@ -38,13 +43,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
-    </a>
-    <a href="?driver&pass&mary">
-        <div class="row request">
-            <div class="col m10 l6">
-                <div class="card-panel">
+    </div>
+
+    <div class="row request">
+        <div class="col m10 l6">
+            <a href="?driver&pass&mary">
+                <div class="card-panel hoverable">
                     <div class="row">
                         <div class="col s2">
                             <img src="images/avatar.png" alt="" class=" img-responsive circle">
@@ -59,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
-    </a>
+    </div>
 </main>

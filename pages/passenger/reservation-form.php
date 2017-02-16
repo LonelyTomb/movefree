@@ -2,44 +2,52 @@
     <div class="col s10 l6">
         <div class="card">
             <div class="card-content">
-        <form>
-            <div class="row">
-                <div class="input-field row">
-                    <i class="material-icons prefix field-icon">place</i>
-                    <input type="text" placeholder="Current location" class="validate">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field row">
-                    <i class="material-icons prefix field-icon">pin_drop</i>
-                    <input type="text" placeholder="Destiantion" class="validate">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field row">
-                    <i class="prefix field-icon material-icons">&#8358;</i>
-                    <input type="text" placeholder="Amount" class="validate">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field row">
-                    <select class="amount">
-                        <option value="">Choose Select Payment type</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field row">
-                    <i class="material-icons prefix field-icon">access_time</i>
-                    <input type="text" placeholder="Pick Time" class="validate">
-                </div>
-            </div>
-         <div class="row center">
-                            <a href="" class="btn waves-effect waves-ripple red center-align submitButton">Make Reservation</a>
+                <form>
+                    <div class="row">
+                        <div class="input-field row">
+                            <i class="material-icons prefix field-icon hide-on-small-only">place</i>
+                            <input type="text" placeholder="Current location" class="validate place">
                         </div>
-        </form>
+                    </div>
+                    <div class="row">
+                        <div class="input-field row">
+                            <i class="material-icons prefix field-icon hide-on-small-only">pin_drop</i>
+                            <input type="text" placeholder="Destination" class="validate destination">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field row">
+                            <i class="prefix field-icon material-icons hide-on-small-only">&#8358;</i>
+                            <input type="text" placeholder="Amount" class="validate price">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field row">
+                            <select class="payType">
+                        <option value="" selected disabled>Choose Select Payment type</option>
+                        <option value="card">Card</option>
+                        <option value="payondelivery">Pay on Delivery</option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field row">
+                            <input type="text" placeholder="Pick Time (HH:MM)" class="validate time col s6 m8">
+                            <select name="time_suffix" id="" class="time_suffix col s3 m2">
+                    <option value="am" selected>AM</option>
+                    <option value="pm">PM</option>
+                    </select>
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <a href="#" class="btn waves-effect waves-ripple red center-align reservebutton submitButton">Make Reservation</a>
+                    </div>
+                    <div class="progress hide">
+                        <div class="indeterminate"></div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 </main>

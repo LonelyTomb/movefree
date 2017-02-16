@@ -8,4 +8,5 @@
             }
                     ?>
             <li><a href="#">about</a></li>
+            <li><a href="index.php?logout">log out</a></li>
         </ul>

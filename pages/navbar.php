@@ -17,7 +17,9 @@
         }
 
         //Passenger Pages
-        if (in_array('pickUp', title())) {
+        if(in_array('history',title())){
+            $header = 'Traffic History';
+        } else if (in_array('pickup', title())) {
             $header =  'Pick Up';
         } else if (in_array('ride', title())) {
             $header =  'Ride Along';

@@ -30,8 +30,7 @@ function valcolor(color, tag) { // toggle Validation Icon
         }
         e.preventDefault();
     });
-    // $('.reserved').modal();
-    // $('.reserved').modal('open');
+
     $('p.review').addRating({ 'icon': 'star' });
     $('.buttonGroup a').click(function() {
         if ($(this).hasClass('signinbtn')) {
@@ -159,18 +158,17 @@ function valcolor(color, tag) { // toggle Validation Icon
                 },
                 beforeSend: function() {
                     $('.upprogress').toggleClass('hide');
-                },
-                success: function(data) {
-                    $('.upprogress').toggleClass('hide');
-                    // Reloads the page if login Successful
-                    if (data.color === 'valid') {
-                        Materialize.toast(data.txt, 4000);
-                        window.location.reload('true');
-                    } else {
-                        Materialize.toast(data.txt, 4000);
-                    }
-
                 }
+            }).done(function(data) {
+                $('.upprogress').toggleClass('hide');
+                // Reloads the page if login Successful
+                if (data.color === 'valid') {
+                    Materialize.toast(data.txt, 4000);
+                    window.location.reload('true');
+                } else {
+                    Materialize.toast(data.txt, 4000);
+                }
+
             });
         }
         return false;
@@ -190,23 +188,66 @@ function valcolor(color, tag) { // toggle Validation Icon
                 logIn: ''
             },
             beforeSend: function() {
-                $('inprogress').toggleClass('hide');
-            },
-            success: function(data) {
-                $('inprogress').toggleClass('hide');
-                // Reloads the page if login Successful
-                if (data.color === 'valid') {
-                    Materialize.toast(data.txt, 4000);
-                    if (data.type == 'Passenger') {
-                        window.location.assign('index.php?home');
-                    } else if (data.type == 'Driver') {
-                        window.location.assign('index.php?driver');
-                    }
-                } else {
-                    Materialize.toast(data.txt, 4000);
+                $('.inprogress').toggleClass('hide');
+            }
+        }).done(function(data) {
+            $('.inprogress').toggleClass('hide');
+            // Reloads the page if login Successful
+            if (data.color === 'valid') {
+                Materialize.toast(data.txt, 4000);
+                if (data.type == 'Passenger') {
+                    window.location.assign('index.php?home');
+                } else if (data.type == 'Driver') {
+                    window.location.assign('index.php?driver');
                 }
+            } else {
+                Materialize.toast(data.txt, 4000);
             }
         });
         return false;
+    });
+    $('.reservebutton').click(function() {
+        var place = $('.place').val();
+        var destination = $('.destination').val();
+        var price = $('.price').val();
+        price = parseInt(price, 10);
+        var payment = $('.payType .select-dropdown li.selected span').html();
+        var time = $('.time').val();
+        var time_suffix = $('.time_suffix .select-dropdown li.selected span').html();
+        $.ajax({
+            url: 'processor/processform.php',
+            type: 'POST',
+            dataType: 'json',
+            cache: false,
+            data: {
+                place: place,
+                destination: destination,
+                price: price,
+                payment: payment,
+                time: time,
+                time_suffix: time_suffix,
+                reserve: ''
+            },
+            beforeSend: function() {
+                $('.reservationForm .progress').toggleClass('hide');
+            }
+        }).done(function(data) {
+            if (data.txt === 'success') {
+                $('.reservationForm .progress').toggleClass('hide');
+                $('.res_type').html(data.type);
+                $('.res_time').html(time);
+                $('.res_time_suffix').html(time_suffix);
+                $('.res_destination').html(destination);
+                $('.res_price').html(price);
+                $('.reserved').modal();
+                $('.reserved').modal('open');
+                window.location.assign('index.php?history');
+            } else if (data.txt === 'error') {
+              Materialize.toast(data.desc,4000);
+            }
+
+        });
+        return false;
+
     });
 })();

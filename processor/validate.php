@@ -99,8 +99,6 @@ function test_address($address, $color)
     }
     if (strlen($address) < 5) {
         return array('color' => $color['invalid'], 'txt' => 'Address length must be greater than 5!');
-    } elseif (!validateName($address)) {
-        return array('color' => $color['invalid'], 'txt' => 'Invalid Character! ');
     } else {
         return array('color' => $color['valid'], 'txt' => 'Address Valid!');
     }

@@ -2,8 +2,9 @@
     <form>
         <div class="row">
             <div class="input-field row">
-                <i class="small field-icon material-icons prefix">email</i>
+                <i class="small field-icon material-icons prefix hide-on-small-only">email</i>
                 <input type="email" placeholder="Email" name="fullname" class="validate inemail">
+                 <label for="email" data-error="wrong" data-success="right"></label>
             </div>
         </div>
         <div class="row">

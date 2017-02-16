@@ -15,7 +15,7 @@ if(!isset($_SESSION['user']['logged']) && $_SESSION['user']['type']!='Passenger'
     </div>
     <div class="row">
         <div class="col s12 m6 menu menu3">
-            <a href="#" class="btn waves-effect waves ripple waves-white">Travel History</a>
+            <a href="?history" class="btn waves-effect waves ripple waves-white">Travel History</a>
         </div>
         <div class="col s12 m6 menu menu4">
             <a href="#" class="btn waves-effect waves ripple waves-white">Settings</a>
