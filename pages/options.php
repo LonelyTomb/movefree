@@ -3,7 +3,7 @@
             <li class="divider"></li>
             <li><a href="index.php">home</a></li>
             <?php
-            if (!in_array('driver', title())) {
+            if ($_SESSION['user']['type'] == 'Passenger') {
                         echo '<li><a href="?home">menu</a></li>';
             }
                     ?>

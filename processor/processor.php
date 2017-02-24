@@ -33,3 +33,23 @@ function confirm_logged() {
     }
         return  false;
 }
+
+function correctTime($time,$timesuffix){
+    $time = new DateTime($time);
+    if ($timesuffix == 'PM') {
+        $time->add(new DateInterval('PT12H'));
+    }
+         return $time->format('g:i A');
+}
+function displayTime($time){
+    $time = json_decode($time);
+    return $time;
+}
+function checkPostVariables($keys) {
+    foreach ($keys as $key) {
+        if (!isset($_POST["$key"])) { 
+            return false;
+        }
+    }
+    return true;
+}

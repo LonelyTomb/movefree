@@ -7,8 +7,9 @@
 }
 
 #map {
-    height: 400px;
-    width:100%;
+    max-height: 400px;
+    min-height: 100px;
+    width: 100%;
 }
 
 %but {
@@ -55,8 +56,14 @@ main {
 }
 
 p,
+span {
+    font: {
+        family: 'Amatic SC', cursive;
+        weight: 900 !important;
+    }
+}
+
 a,
-span,
 h1 {
     font: {
         family: 'Amatic SC Bold', cursive;
@@ -330,25 +337,32 @@ footer.page-footer {
     }
     .menu {
         text-align: center;
-        height: 41.3vh;
+        position: relative;
+        min-height: calc((100vh - 7.1em) / 2);
         background: {
             color: color('green', 'base');
         }
         a {
             @extend %but;
-            position: relative;
-            top: 45%;
-            bottom: 45%;
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            right: 10%;
+            bottom: 30%;
             padding: {
                 top: 3%;
                 bottom: 3%;
                 left: 7%;
                 right: 7%;
             }
-            height: auto;
+            min-height: 3em;
             font: {
                 size: 2em;
                 weight: 400;
+            }
+            @media #{$medium-and-down} {
+                font-size: 1.5em;
+                min-height: 4em;
             }
         }
     }
@@ -475,16 +489,17 @@ footer.page-footer {
         }
     }
     .map {
-        .card-panel{
-            position:relative;
-        a {
-            bottom: 10%;
-            position: absolute;
-            left: 5%;
+        .card-panel {
+            position: relative;
+            a {
+                bottom: 10%;
+                position: absolute;
+                left: 5%;
+            }
+            .mapCont {
+                min-height: 100%;
+            }
         }
-        .mapCont {
-            min-height: 100%;
-        }}
     }
 }
 
@@ -532,7 +547,8 @@ footer.page-footer {
             }
         }
         img {
-            max-height: 50px;
+            max-height: 64px;
+            height: 54px;
         }
         p {
             margin: {
@@ -570,12 +586,20 @@ footer.page-footer {
         }
         .traffic,
         .time {
-            &>div {
-                @extend %no-float;
-            }
+            @extend %no-float;
             .card-panel {
                 padding: 10px;
             }
+        }
+    }
+    .decision {
+        .accept {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .decline {
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
     }
 }
@@ -583,15 +607,15 @@ footer.page-footer {
 //****************************/
 //******Traffic History ******/
 //****************************/
-.historyOverview{
-    .card-panel{
+.historyOverview {
+    .card-panel {
         @extend %no-float;
-        &>div{
-            margin-bottom:0;
+        &>div {
+            margin-bottom: 0;
         }
-        .complete{
-            a{
-                margin-bottom:4%;
+        .complete {
+            a {
+                margin-bottom: 4%;
             }
         }
     }

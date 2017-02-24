@@ -1,9 +1,4 @@
-<?php 
-if(!isset($_SESSION['user']['logged']) && $_SESSION['user']['type']!='Passenger'){
-    header('location:index.php');
-}
-
-?>
+<?php $pageTitle = 'home';?>
 <main class="home-overview">
     <div class="row">
         <div class="col s12 m6 menu menu1">

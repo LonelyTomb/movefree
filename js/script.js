@@ -232,22 +232,70 @@ function valcolor(color, tag) { // toggle Validation Icon
                 $('.reservationForm .progress').toggleClass('hide');
             }
         }).done(function(data) {
+            $('.reservationForm .progress').toggleClass('hide');
             if (data.txt === 'success') {
-                $('.reservationForm .progress').toggleClass('hide');
-                $('.res_type').html(data.type);
-                $('.res_time').html(time);
-                $('.res_time_suffix').html(time_suffix);
-                $('.res_destination').html(destination);
-                $('.res_price').html(price);
+                $('.reserved .res_type').html(data.type);
+                $('.reserved .res_time').html(time);
+                $('.reserved .res_time_suffix').html(time_suffix);
+                $('.reserved .res_destination').html(destination);
+                $('.reserved .res_price').html(price);
                 $('.reserved').modal();
                 $('.reserved').modal('open');
                 window.location.assign('index.php?history');
             } else if (data.txt === 'error') {
-              Materialize.toast(data.desc,4000);
+                Materialize.toast(data.desc, 4000);
             }
 
         });
         return false;
 
     });
+
+    $('.accept ').click(function() {
+        var passenger = $('.passenger_id').val();
+        var driver = $('.driver_id').val();
+        var res_id = $('.res_id').val();
+        var name = $('.name').html();
+        var type = $('.type').html();
+        var time = $('.initial').html();
+        var destination = $('.pdest').html();
+        var price = $('.price span').html();
+        $.ajax({
+            url: 'processor/selectPassenger.php',
+            type: 'POST',
+            dataType: 'json',
+            cache: false,
+            data: {
+                passenger: passenger,
+                driver: driver,
+                res_id: res_id,
+                complete: ''
+            },
+            beforeSend: function() {
+                $('.progress').toggleClass('hide');
+            }
+        }).done(function(data) {
+            $('.progress').toggleClass('hide');
+            if (data.txt === 'success') {
+                $('.passengerSel .res_name').html(name);
+                $('.res_type').html(type);
+                $('.passengerSel .res_time').html(time);
+                $('.passengerSel .res_destination').html(destination);
+                $('.passengerSel .res_price').html(price);
+                $('.passengerSel').modal();
+                $('.passengerSel').modal('open');
+                // window.location.assign('index.php?history');
+            } else {
+                Materialize.toast(data.desc, 4000);
+            }
+        });
+        return false;
+    });
+    $('.decline').click(function() {
+        window.location.assign('index.php?driver');
+    });
+    // $('a.pay').click(function() {
+
+    //     return false;
+    // });
 })();

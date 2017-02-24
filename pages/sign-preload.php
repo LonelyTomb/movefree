@@ -1,4 +1,12 @@
-
+<?php
+if(isset($_SESSION['user']['logged'])){
+    if($_SESSION['user']['type'] == 'Passenger'){
+        header('location:index.php?home');
+    }else{
+        header('location:index.php?driver');
+    }
+}
+?>
 <main class="preview-overview">
     <div class="row">
         <div class="col m10 card-container">
