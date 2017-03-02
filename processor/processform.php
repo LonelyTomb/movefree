@@ -49,11 +49,11 @@ if (isset($_POST['reserve']) && checkPostVariables(array('place','destination','
         $stmt->bindColumn('name', $type);
         $result = $stmt->fetch(PDO::FETCH_BOUND);
 
-        $sql = 'SELECT * FROM reservation WHERE user_id=:user_id AND current_location=:current_location AND destination=:destination AND time=:time';
+        $sql = 'SELECT * FROM reservation WHERE user_id=:user_id AND time=:time';
         $stmt=$pdo->prepare($sql);
           $stmt->bindParam(':user_id', $_SESSION['user']['id'],  PDO::PARAM_STR);
-        $stmt->bindParam(':current_location', $place, PDO::PARAM_STR);
-        $stmt->bindParam(':destination', $destination,  PDO::PARAM_STR);
+        // $stmt->bindParam(':current_location', $place, PDO::PARAM_STR);
+        // $stmt->bindParam(':destination', $destination,  PDO::PARAM_STR);
         $stmt->bindParam(':time', $time);
         $stmt->execute();
 

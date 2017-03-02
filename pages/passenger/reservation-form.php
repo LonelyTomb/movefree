@@ -32,8 +32,8 @@
                     </div>
                     <div class="row">
                         <div class="input-field row">
-                            <input type="text" placeholder="Pick Time (HH:MM)" class="validate time col s6 m8">
-                            <select name="time_suffix" id="" class="time_suffix col s3 m2">
+                            <input type="text" placeholder="(HH:MM) Pick Time" class="validate time col s8 m7">
+                            <select name="time_suffix" id="" class="time_suffix col s4 m3 l3">
                             <option value=""selected disabled></option>
                     <option value="am">AM</option>
                     <option value="pm">PM</option>

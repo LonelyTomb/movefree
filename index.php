@@ -52,6 +52,8 @@ if (in_array('logout', title())) {
             } else {
                     header('location:index.php');
             }
+        } else {
+                header('location: index.php');
         }
         include 'pages/footer.php';
     }

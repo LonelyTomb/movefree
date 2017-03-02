@@ -272,10 +272,10 @@ function valcolor(color, tag) { // toggle Validation Icon
                 complete: ''
             },
             beforeSend: function() {
-                $('.progress').toggleClass('hide');
+                $('.status .progress').toggleClass('hide');
             }
         }).done(function(data) {
-            $('.progress').toggleClass('hide');
+            $('.status .progress').toggleClass('hide');
             if (data.txt === 'success') {
                 $('.passengerSel .res_name').html(name);
                 $('.res_type').html(type);
@@ -284,7 +284,7 @@ function valcolor(color, tag) { // toggle Validation Icon
                 $('.passengerSel .res_price').html(price);
                 $('.passengerSel').modal();
                 $('.passengerSel').modal('open');
-                // window.location.assign('index.php?history');
+                window.location.assign('index.php?history');
             } else {
                 Materialize.toast(data.desc, 4000);
             }
@@ -294,8 +294,38 @@ function valcolor(color, tag) { // toggle Validation Icon
     $('.decline').click(function() {
         window.location.assign('index.php?driver');
     });
-    // $('a.pay').click(function() {
+    $('a.payment').click(function() {
+        var type = $('.cardType .select-dropdown li.selected span').html();
+        var number = $('.cardNumber').val();
+        var cv = $('.cV').val();
+        var res_id = $('.res_id').val();
+        var driver_id = $('.driver_id').val();
+        $.ajax({
+            url: 'processor/processCard.php',
+            type: 'POST',
+            dataType: 'json',
+            cache: false,
+            data: {
+                type: type,
+                number: number,
+                cv: cv,
+                res_id: res_id,
+                driver_id: driver_id,
+                pay: ''
+            },
+            beforeSend: function() {
+                $('.status .progress').toggleClass('hide');
+            }
+        }).done(function(data) {
+            $('.status .progress').toggleClass('hide');
+            if (data.txt === 'success') {
+                var ref = window.location.href + "&driver_id=" + data.driver_id + "&res_id=" + data.res_id + "&success";
+                window.location.assign(ref);
+            } else {
+                Materialize.toast(data.desc, 4000);
+            }
+        });
 
-    //     return false;
-    // });
+        return false;
+    });
 })();

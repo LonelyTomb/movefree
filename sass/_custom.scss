@@ -38,7 +38,8 @@
 html {
     font: {
         size: 100%;
-        family: 'Amatic SC', cursive;
+        // family: 'Amatic SC', cursive;
+        family: noto, cursive;
     }
     background: {
         color: color('green', 'base');
@@ -58,7 +59,8 @@ main {
 p,
 span {
     font: {
-        family: 'Amatic SC', cursive;
+        // family: 'Amatic SC', cursive;
+        family: noto, cursive;
         weight: 900 !important;
     }
 }
@@ -66,7 +68,8 @@ span {
 a,
 h1 {
     font: {
-        family: 'Amatic SC Bold', cursive;
+        // family: 'Amatic SC Bold', cursive;
+        family: noto, cursive;
         weight: 400;
     }
 }
@@ -445,8 +448,26 @@ footer.page-footer {
                 left: 3rem;
             }
         }
+        .input-field i+input {
+            @media #{$small-and-down} {
+                width: 100%;
+                margin: {
+                    left: auto !important;
+                }
+            }
+        }
+        div.select-wrapper {
+            @media #{$small-and-down} {
+                margin: {
+                    left: auto;
+                }
+                width: 100%;
+            }
+        }
         input.time {
-            margin-left: 3rem !important;
+            @media #{$medium-and-up} {
+                margin-left: 3rem !important;
+            }
         }
     }
 }

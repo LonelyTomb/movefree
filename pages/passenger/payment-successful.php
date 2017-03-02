@@ -1,11 +1,11 @@
 
 <?php
+    require 'processor/connection.php';
 $res_id = $_GET['res_id'];
 $driver_id = $_GET['driver_id'];
 $passenger_id = $_SESSION['user']['id'];
 
 try{
-    require 'processor/connection.php';
 
     $sql = "SELECT * FROM reserved WHERE driver_id =:driver_id AND res_id = :res_id AND passenger_id =:passenger_id AND paymentStatus='paid'";
     $stmt=$pdo->prepare($sql);

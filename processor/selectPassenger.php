@@ -16,8 +16,11 @@ if (isset($_POST['complete'])) {
             $stmt->bindParam(':res_id',$res_id,PDO::PARAM_STR);
             $stmt->execute();
             if ($stmt->rowCount() > 0) {
-                $up = "UPDATE reservation SET status='driver matched' WHERE user_id='$passenger'";
-                $stmt = $pdo->query($up);
+                $up = "UPDATE reservation SET status='driver matched' WHERE id=:id AND user_id=:user_id";
+                $stmt = $pdo->prepare($up);
+                $stmt->bindParam(':user_id',$passenger);
+                $stmt->bindParam(':id',$res_id);
+                $stmt->execute();
                 if ($stmt->rowCount()>0) {
 
                     echo json_encode(array('txt'=>'success'));

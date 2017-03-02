@@ -21,9 +21,14 @@ if ($payment_type == 'Card') {
             <div class='card-content'>
                 <form action=''>
                     <div class='row'>
+                    <input type='hidden' value='$res_id' class='res_id'>
+                    <input type='hidden' value='$driver_id' class='driver_id'>
                         <div class='input-field row'>
-                            <select>
-                                <option value=''>CardType</option>
+                            <select class='cardType'>
+                                <option value='' selected disabled>CardType</option>
+                                <option value='mastercard'>MasterCard</option>
+                                <option value='verve'>Verve</option>
+                                <option value='visa'>Visa</option>
                             </select>
                         </div>
                     </div>
@@ -37,13 +42,13 @@ if ($payment_type == 'Card') {
                             <input type='text' placeholder='Cv' class='validate cV'>
                         </div>
                     </div>
-                    <div class='row'>
-                        <div class='input-field row'>
-                            <input type='text' placeholder='Pm' class='validate pm'>
-                        </div>
-                    </div>
                     <div class='row center'>
                         <a href='#' class='btn waves-effect waves-ripple green payment'>Make Payment</a>
+                    </div>
+                    <div class='row'>
+                    <div class='progress status hide'>
+                    <div class='indeterminate'></div>
+                    </div>
                     </div>
                 </form>
             </div>
